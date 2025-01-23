@@ -1,35 +1,33 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [color, setColor] = useState("white");
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="w-full h-screen fixed" style={{ backgroundColor: color }}>
+      <div className=" flex justify-end">
+      <button 
+      onClick={() => setColor("white")}
+      className="outline-4 rounded-lg text-white p-2 border-black" style={{backgroundColor: "blue"}}>Reset</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="fixed flex justify-center flex-wrap bottom-12 inset-x-0">
+      <div className="flex justify-center flex-wrap bg-white rounded-lg p-2 inset-x-0">
+      <button 
+      onClick={() => setColor("red")}
+      className="outline-none rounded-lg p-2 py-1 text-white mx-1" style={{backgroundColor: "red"}}>Red</button>
+      <button 
+      onClick={() => setColor("green")}
+      className="outline-none rounded-lg p-2 py-1 text-white mx-1" style={{backgroundColor: "Green"}}>Green</button>
+      <button 
+      onClick={() => setColor("yellow")}
+      className="outline-none rounded-lg p-2 py-1 text-white mx-1" style={{backgroundColor: "Yellow"}}>Yellow</button>
+      <button 
+      onClick={() => setColor("black")}
+      className="outline-none rounded-lg p-2 py-1 text-white mx-1" style={{backgroundColor: "black"}}>Black</button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      </div>
+      </div>
+  );
 }
 
 export default App
